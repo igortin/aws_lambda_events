@@ -9,5 +9,5 @@ Events:
 - StartInstances
 - DeleteUSer
 - CreateUser
-> Note: API Call is Event taht you can procced and save to db
+> Note: Any API Call is Event that you can procced and save to db
 

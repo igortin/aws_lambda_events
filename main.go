@@ -18,8 +18,8 @@ var (
 )
 
 func handler(ctx context.Context, event events.CloudWatchEvent) {
-
 	e := NewEvent()
+
 	err := json.Unmarshal([]byte(event.Detail), e)
 	if err != nil {
 		log.Println(err)
@@ -35,21 +35,16 @@ func handler(ctx context.Context, event events.CloudWatchEvent) {
 			log.Println(err)
 		}
 	case "StopInstances":
-
 		_, err := client.CustomPutItem(tableName, e)
-
 		if err != nil {
 			log.Println(err)
 		}
-
 	case "CreateUser":
-
 		_, err := client.CustomPutItem(tableName, e)
 		if err != nil {
 			log.Println(err)
 		}
 	case "DeleteUser":
-
 		_, err := client.CustomPutItem(tableName, e)
 		if err != nil {
 			log.Println(err)
